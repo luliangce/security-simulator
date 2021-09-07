@@ -3,7 +3,7 @@ h1 保安模拟器
 h2 {{ E.name }}
 div(style="padding:30px")
   el-row(:gutter="30")
-    el-col(:span="6" )
+    el-col(:span="6" :xs="24")
       el-card(shadow="always")
         template(#header)
           | 你的信息
@@ -12,7 +12,7 @@ div(style="padding:30px")
             el-progress(:percentage="profile.fame")
           el-form-item(label="公司信任")
             el-progress(:percentage="profile.trust")
-    el-col(:span="8")
+    el-col(:span="8" :xs="24" style="min-height: 300px;")
       el-button(@click="nextStep" type="primary" :disabled="!canGoNext")
         | 继续
       div(class="question") {{p?.desc}}
@@ -21,7 +21,7 @@ div(style="padding:30px")
       div(v-for="(o,i) in p?.options||[]" :key="i" class="option" @click="makeChoice(o)")
         i(class="el-icon-right")
         | {{o.desc}}
-    el-col(:span="8")
+    el-col(:span="8" :xs="24")
       li(v-for="(m,i) in messages" :key="i" class="message" :class="{latest: i==0}" )
         | {{m}}
 
